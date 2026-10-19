@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "CrowedSourced Network Analizer",
+  "license": "ISC",
+  "author": "Vansh Gularia",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/devServer.js",
+    "start": "node src/devServer.js",
+    "backfill-aggregates": "node scripts/backfill-aggregates.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "cookie-parser": "^1.4.7",
+    "cores": "^0.8.5",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1",
+    "morgan": "^1.10.1",
+    "node-fetch": "^3.3.2"
+  }
+}
