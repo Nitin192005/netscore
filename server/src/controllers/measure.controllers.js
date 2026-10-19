@@ -2,13 +2,11 @@ import { SpeedTest } from '../models/measure.model.js';
 import { ApiError } from '../utils/ApiError.js';
 import { resolveIsp, looksLikeIp } from '../services/isp.service.js';
 import { upsertSpeedTestAggregate } from '../services/aggregate.service.js';
+import { validateSpeedTestPayload } from '../utils/validateSpeedTestPayload.js';
 
 const sendData = async (req, res) => {
+  validateSpeedTestPayload(req.body);
   const { downloadSpeed, uploadSpeed, ping, ip, latitude, longitude, provider } = req.body;
-
-  if (downloadSpeed == null || uploadSpeed == null || ping == null) {
-    throw new ApiError(400, "Missing required fields");
-  }
 
   const resolvedIp = ip || "Unknown";
   let resolvedProvider = provider;

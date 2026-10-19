@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nodemon src/devServer.js",
     "start": "node src/devServer.js",
-    "backfill-aggregates": "node scripts/backfill-aggregates.js"
+    "backfill-aggregates": "node scripts/backfill-aggregates.js",
+    "test": "node --test"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
